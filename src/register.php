@@ -29,6 +29,9 @@
             <div class="form-group">
                 <p>Already have an account? <a href="login.php">Login</a></p>
             </div>
+            <div class="form-group">
+                <p>Return to the homepage?<a href="index.php">homepage</a></p>
+            </div>
         </form>
     </div>
 </html>
