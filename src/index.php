@@ -18,37 +18,37 @@
 
 <body>
     <div class="page1">
-        <header class="header">
-            <div class="headertop">
-                <div class="container">
-                    <div class="logo">
-                        <img src="images/logo.png" alt="">
-                    </div>
-                    <div class="topnav" id="myTopnav">
-                        <a href="#page1"><i class="fa fa-fw fa-home"></i>Home</a>
-                        <a href="#page2"><i class="fa-solid fa-burger"></i>Smoky'14</a>
-                        <a href="#page5"><i class="fa fa-envelope"></i>About</a>
-                        <a href="#page4"><i class="fa-solid fa-user"></i>Profile</a>
-                        <a href="#page6"><i class="fa-solid fa-cart-shopping"></i>shop</a>
-                        <a href="login.php">login</a>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container">
+                <a href="#" class="navbar-brand"><img src="images/logo.png" alt=""></a>
 
-                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                            <i class="fa fa-bars"></i>
-                        </a>
-                    </div>
-
-                    <script>
-                        function myFunction() {
-                            var x = document.getElementById("myTopnav");
-                            if (x.className === "topnav") {
-                                x.className += " responsive";
-                            } else {
-                                x.className = "topnav";
-                            }
-                        }
-                    </script>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navmenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="#page1" class="nav-link"><i class="fa-fw fa-home"></i>Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#page2" class="nav-link"><i class="fa-solid fa-burger"></i>Smoky'14</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#page5" class="nav-link"><i class="fa fa-envelope"></i>About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#page4" class="nav-link"><i class="fa-solid fa-user"></i>Profile</a>
+                        </li>
+                        <li>
+                            <a href="#page6" class="nav-link"><i class="fa-solid fa-cart-shopping"></i>Shop</a>
+                        </li>
+                        <li>
+                            <a href="login.php" class="nav-link">Login</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+        </nav>
             <div class="headerbottom">
                 <div class="content">
                     <h1>Grilled Beef Burger</h1>

@@ -1,6 +1,11 @@
 body {
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    scroll-behavior: smooth;
     display: flex;
-    background-color: #ffffff;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
