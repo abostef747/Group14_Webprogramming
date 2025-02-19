@@ -11,6 +11,7 @@
 
 // Close the connection -->
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,19 +19,20 @@
     <title>Document</title>
 </head>
 <html>
-    <body>
+
+<body>
     <div class="container">
-    <?php
+        <?php
         include("database.php");
-        
+
         $sqlInsertion = "INSERT INTO users (user, password)
                         VALUES ('Mussa', 'mumo')";
-                        if (mysqli_query($conn, $sqlInsertion)) {
-                                 echo "New record created successfully!";
-                            } else {
-                                 echo "Error: " . $sqlInsertion . "<br>" . mysqli_error($conn);
-                            }
-                        
+        if (mysqli_query($conn, $sqlInsertion)) {
+            echo "New record created successfully!";
+        } else {
+            echo "Error: " . $sqlInsertion . "<br>" . mysqli_error($conn);
+        }
+
 
         // $sql = "SELECT * FROM users WHERE user = 'Sohaib'";
         // $result = mysqli_query( $conn, $sql );
@@ -45,7 +47,7 @@
         //     echo "no user found!";
         // }
         // mysqli_close($conn);
-    ?>
+        ?>
         <form action="login.php" method="post">
             <h1>Login to our platform</h1>
             <h5>Login and start ordering</h5>
@@ -59,14 +61,15 @@
         </form>
         <?php
         if (isset($_POST["submit"])) {
-            if ($_POST ["email"] != "" || $_POST ["password"] != "") {
+            if ($_POST["email"] != "" || $_POST["password"] != "") {
                 echo "<h3 style='color: green; margin: 0 auto'>Successfully logged in</h3> <br>";
                 echo "this is your email: {$_POST["email"]} <br>";
                 echo "this is your password: {$_POST["password"]} <br>";
-            }else{
+            } else {
                 echo "<h3 style='color: red; margin: 0 auto'>Please enter your email and password</h3> <br>";
             }
         }
         ?>
     </div>
+
 </html>

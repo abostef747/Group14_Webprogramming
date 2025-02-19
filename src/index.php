@@ -18,7 +18,7 @@
 
 <body>
     <div class="page1">
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
             <div class="container">
                 <a href="#" class="navbar-brand"><img src="images/logo.png" alt=""></a>
 
@@ -31,7 +31,7 @@
                             <a href="#page1" class="nav-link"><i class="fa-fw fa-home"></i>Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#page2" class="nav-link"><i class="fa-solid fa-burger"></i>Smoky'14</a>
+                            <a href="orders.php" class="nav-link"><i class="fa-solid fa-burger"></i>Smoky'14 Orders</a>
                         </li>
                         <li class="nav-item">
                             <a href="#page5" class="nav-link"><i class="fa fa-envelope"></i>About</a>
@@ -49,15 +49,15 @@
                 </div>
             </div>
         </nav>
-            <div class="headerbottom">
-                <div class="content">
-                    <h1>Grilled Beef Burger</h1>
-                    <p>Special Deal on only <span>TUESDAY</span> every week</p>
-                    <p>Buy 3 Get 4th <span>FREE!</span></p>
-                    <a href="#page3"><button class="order-btn">Order Now</button></a>
-                </div>
-                <!-- <img class="firstImage" src="images/tasty_burgers.png" alt=""> -->
+        <div class="headerbottom">
+            <div class="content">
+                <h1>Grilled Beef Burger</h1>
+                <p>Special Deal on only <span>TUESDAY</span> every week</p>
+                <p>Buy 3 Get 4th <span>FREE!</span></p>
+                <a href="#page3"><button class="order-btn">Order Now</button></a>
             </div>
+            <!--<img src="images/smoky_burgers.jpg" alt="smokyburgers"-->
+        </div>
 
         </header>
     </div>
