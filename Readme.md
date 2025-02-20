@@ -1,4 +1,4 @@
-# Project Name: WebProgrammingProject - Team Number:14
+# Project Name: WebProgrammingProject - Team Number: 14
 
 ## Project Overview
 This project is part of our Web Programming course, where we apply our skills to enhance a database-driven website. The website builds upon our previous "Website User Interface" course and follows the SCRUM development methodology, ensuring continuous progress with weekly demonstrations.
