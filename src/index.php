@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -138,94 +137,58 @@
         </main>
     </div>
     <div class="page3" id="page3">
-    <div class="container">
-        <div class="scroll-container">
-            <div class="card" data-item="American Whopper" data-price="5.00">
-                <img src="images/Big_King.png" alt="Burger 1">
-                <h3>American Whopper</h3>
-                <p>Beef, lettuce, tomato, onion, cheese</p>
-                <p class="price">€5.00</p>
-                <button class="select-button">Select item</button>
-            </div>
-            <div class="card" data-item="BBQ & Bacon Whopper" data-price="10.00">
-                <img src="images/Bacon_King.png" alt="Burger 2">
-                <h3>BBQ & Bacon Whopper</h3>
-                <p>Grilled beef, smoky bacon, BBQ sauce</p>
-                <p class="price">€10.00</p>
-                <button class="select-button">Select item</button>
-            </div>
-            <div class="card" data-item="Bacon King" data-price="15.00">
-                <img src="images/Big_King.png" alt="Burger 3">
-                <h3>Bacon King</h3>
-                <p>Double beef, crispy bacon, cheese</p>
-                <p class="price">€15.00</p>
-                <button class="select-button">Select item</button>
-            </div>
-            <div class="card" data-item="American Whopper" data-price="5.00">
-                <img src="images/Big_King.png" alt="Burger 1">
-                <h3>American Whopper</h3>
-                <p>Beef, lettuce, tomato, onion, cheese</p>
-                <p class="price">€5.00</p>
-                <button class="select-button">Select item</button>
-            </div>
-            <div class="card" data-item="BBQ & Bacon Whopper" data-price="10.00">
-                <img src="images/Bacon_King.png" alt="Burger 2">
-                <h3>BBQ & Bacon Whopper</h3>
-                <p>Grilled beef, smoky bacon, BBQ sauce</p>
-                <p class="price">€10.00</p>
-                <button class="select-button">Select item</button>
-            </div>
-            <div class="card" data-item="Bacon King" data-price="15.00">
-                <img src="images/Chicken_Tendercrisp.png" alt="Burger 3">
-                <h3>Bacon King</h3>
-                <p>Double beef, crispy bacon, cheese</p>
-                <p class="price">€15.00</p>
-                <button class="select-button">Select item</button>
-            </div>
-            <div class="card" data-item="American Whopper" data-price="5.00">
-                <img src="images/Chicken_Tendercrisp.png" alt="Burger 1">
-                <h3>American Whopper</h3>
-                <p>Beef, lettuce, tomato, onion, cheese</p>
-                <p class="price">€5.00</p>
-                <button class="select-button">Select item</button>
-            </div>
-            <div class="card" data-item="BBQ & Bacon Whopper" data-price="10.00">
-                <img src="images/Burger.png" alt="Burger 2">
-                <h3>BBQ & Bacon Whopper</h3>
-                <p>Grilled beef, smoky bacon, BBQ sauce</p>
-                <p class="price">€10.00</p>
-                <button class="select-button">Select item</button>
-            </div>
-            <div class="card" data-item="Bacon King" data-price="15.00">
-                <img src="images/Burger.png" alt="Burger 3">
-                <h3>Bacon King</h3>
-                <p>Double beef, crispy bacon, cheese</p>
-                <p class="price">€15.00</p>
-                <button class="select-button">Select item</button>
+
+        <div class="container">
+            <div class="scroll-container">
+                <div class="card">
+
+                    <img src="images/Big_King.png" alt="Burger 1">
+                    <h3>American Whopper</h3>
+                    <p>Beef, lettuce, tomato, onion, cheese</p>
+                    <p class="price">€5.00</p>
+                    <button class="select-button">Select item</button>
+                </div>
+                <div class="card">
+
+                    <img src="images/Bacon_King.png" alt="Burger 2">
+                    <h3>BBQ & Bacon Whopper</h3>
+                    <p>Grilled beef, smoky bacon, BBQ sauce</p>
+                    <p class="price">€10.00</p>
+                    <button class="select-button">Select item</button>
+                </div>
+                <div class="card">
+
+                    <img src="images/Big_King.png" alt="Burger 3">
+                    <h3>Bacon King</h3>
+                    <p>Double beef, crispy bacon, cheese</p>
+                    <p class="price">€15.00</p>
+                    <button class="select-button">Select item</button>
+                </div>
+
+                <div class="card">
+
+                    <img src="images/Big_King.png" alt="Burger 1">
+                    <h3>American Whopper</h3>
+                    <p>Beef, lettuce, tomato, onion, cheese</p>
+                    <p class="price">€5.00</p>
+                    <button class="select-button">Select item</button>
+                </div>
+                <div class="card">
+
+                    <img src="images/Bacon_King.png" alt="Burger 2">
+                    <h3>BBQ & Bacon Whopper</h3>
+                    <p>Grilled beef, smoky bacon, BBQ sauce</p>
+                    <p class="price">€10.00</p>
+                    <button class="select-button">Select item</button>
+                </div>
+                <div class="card">
+
+                    <img src="images/Chicken_Tendercrisp.png" alt="Burger 3">
+                    <
             </div>
         </div>
-    </div>
-</div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const selectButtons = document.querySelectorAll('.select-button');
 
-        selectButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const card = this.parentElement;
-                const itemName = card.getAttribute('data-item');
-                const itemPrice = card.getAttribute('data-price');
-
-                let selectedItems = JSON.parse(localStorage.getItem('selectedItems')) || [];
-                selectedItems.push({ itemName, itemPrice });
-                localStorage.setItem('selectedItems', JSON.stringify(selectedItems));
-
-                window.location.href = 'order_chart.php';
-            });
-        });
-    });
-</script>
 
     </div>
     <div class="page4" id="page4"></div>
