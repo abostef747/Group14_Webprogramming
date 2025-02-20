@@ -32,9 +32,10 @@ include("database.php");
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="menuitems.php">Menu</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">News</a></li>
+                        <li class="nav-item"><a class="nav-link" href="orders.php">Order History</a></li>
                     </ul>
                     <ul class="navbar-nav ms-auto gap-2">
+                        <li class="nav-item cta-btn"><a class="nav-link" href="admin.php">Admin</a></li>
                         <li class="nav-item cta-btn"><a class="nav-link" href="login.php">Login</a></li>
                         <li class="nav-item cta-btn"><a class="nav-link" href="register.php">Register</a></li>
                     </ul>
