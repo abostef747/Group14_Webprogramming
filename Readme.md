@@ -29,40 +29,40 @@ The database schema is generated using PhpMyAdmin and stored in the project repo
 
 ## Technologies Used:
 
---MySQL for data storage
---PHP for backend interaction with the database
---PhpMyAdmin for database management
+- MySQL for data storage
+- PHP for backend interaction with the database
+- PhpMyAdmin for database management
 
 ## Key Functionalities:
 
---Storing and retrieving user-generated content
---Managing relationships between tables
---Ensuring data integrity with proper constraints (e.g., primary keys, foreign keys)
+- Storing and retrieving user-generated content
+- Managing relationships between tables
+- Ensuring data integrity with proper constraints (e.g., primary keys, foreign keys)
 
 Provide links to related code files (github) & link to the feature (shell.hamk.fi) .
 
 ### Feature 2 :CRUD Functionality
 Our website supports full CRUD (Create, Read, Update, Delete) operations, enabling dynamic content management. These functionalities allow users to interact with the database efficiently.
 
---Create: Users can submit data via forms, which is then stored in the database.
+- Create: Users can submit data via forms, which is then stored in the database.
 
---Read: Data is retrieved and displayed dynamically on the website.
+- Read: Data is retrieved and displayed dynamically on the website.
 
---Update: Users can modify existing records through editable forms.
+- Update: Users can modify existing records through editable forms.
 
---Delete: Data can be removed securely using a delete function.
+- Delete: Data can be removed securely using a delete function.
 
 ## Security Measures:
 
---SQL queries are prepared statements to prevent SQL injection.
---Admin panel is protected using .htaccess authentication.
---User inputs are validated to ensure data integrity.
+- SQL queries are prepared statements to prevent SQL injection.
+- Admin panel is protected using .htaccess authentication.
+- User inputs are validated to ensure data integrity.
 
 ## Technologies Used:
 
---PHP for server-side scripting
---MySQL for data storage and retrieval
---HTML & JavaScript for front-end forms
+- PHP for server-side scripting
+- MySQL for data storage and retrieval
+- HTML & JavaScript for front-end forms
 
 Provide links to related code files (github) & link to the feature (shell.hamk.fi) .
 
@@ -71,22 +71,22 @@ Client-side validation is implemented to improve data integrity and enhance the 
 
 ## Validation Rules Implemented:
 
---Required fields must be filled before submission.
---Email addresses must follow a valid email format (example@domain.com).
---Password fields require a minimum length and a combination of characters.
---Numeric fields allow only valid number inputs.
+- Required fields must be filled before submission.
+- Email addresses must follow a valid email format (example@domain.com).
+- Password fields require a minimum length and a combination of characters.
+- Numeric fields allow only valid number inputs.
 
 ## Real-Time Feedback:
 
---Error messages appear dynamically as users fill out the form.
---Fields are highlighted when invalid inputs are detected.
---Users cannot submit the form until all required fields meet the criteria.
+- Error messages appear dynamically as users fill out the form.
+- Fields are highlighted when invalid inputs are detected.
+- Users cannot submit the form until all required fields meet the criteria.
 
 ## Technologies Used:
 
---JavaScript for event handling
---Regular expressions (Regex) for pattern matching
---HTML5 form validation attributes for basic checks
+- JavaScript for event handling
+- Regular expressions (Regex) for pattern matching
+- HTML5 form validation attributes for basic checks
 
 Provide links to related code files (github) & link to the feature (shell.hamk.fi).
 
@@ -96,16 +96,16 @@ Interactive JavaScript event handlers are implemented to improve user engagement
 
 ## Implemented Event Handlers:
 
---Button Click Events: Execute functions when users click buttons (e.g., submitting a form, showing/hiding content).
---Form Input Events: Provide real-time feedback when users type or change field values.
---Mouse Hover Events: Trigger animations or display tooltips when users hover over elements.
---Keyboard Events: Capture and process user input, such as detecting keypresses in search fields.
+- Button Click Events: Execute functions when users click buttons (e.g., submitting a form, showing/hiding content).
+- Form Input Events: Provide real-time feedback when users type or change field values.
+- Mouse Hover Events: Trigger animations or display tooltips when users hover over elements.
+- Keyboard Events: Capture and process user input, such as detecting keypresses in search fields.
 
 ## Technologies Used:
 
---JavaScript for dynamic interaction
---Event listeners (click, mouseover, keyup, etc.)
---CSS for visual effects triggered by events
+- JavaScript for dynamic interaction
+- Event listeners (click, mouseover, keyup, etc.)
+- CSS for visual effects triggered by events
 
 ---
 
