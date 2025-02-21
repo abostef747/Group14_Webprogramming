@@ -3,8 +3,9 @@ include("database.php");
 
 
 
-$sql = "SELECT * FROM menu_items";
-$result = $conn->query($sql);
+$sqlretrieve = "SELECT * FROM menu_items";
+$result = $conn->query($sqlretrieve);
+
 
 ?>
 
@@ -41,10 +42,12 @@ $result = $conn->query($sql);
             </div>
         </div>";
             }
+           
         } else {
             echo "No items found!";
         }
-        ?>
+
+        
     </div>
 </body>
 

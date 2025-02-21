@@ -43,6 +43,30 @@ if (isset($_GET['delete'])) {
     }
 }
 
+$sql = "SELECT Orders.order_id AS order_id, users.username AS customer, menu_items.name AS item, menu_items.price, Orders.order_date FROM Orders JOIN users ON Orders.customer_id = users.customer_id JOIN menu_items ON Orders.menu_item_id = menu_items.menu_item_id ORDER BY Orders.order_date DESC;";
+
+
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    echo "<h2>Order History</h2>";
+    echo "<table border='1'><tr><th>Order ID</th><th>Customer</th><th>Item</th><th>Price</th><th>Date</th></tr>";
+
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>
+                <td>{$row['order_id']}</td>
+                <td>{$row['customer']}</td>
+                <td>{$row['item']}</td>
+                <td>\${$row['price']}</td>
+                <td>{$row['order_date']}</td>
+              </tr>";
+    }
+    echo "</table>";
+} else {
+    echo "No orders found.";
+}
+
+
 // Fetch all orders
 $sql = "SELECT * FROM Orders";
 $result = $conn->query($sql);
@@ -54,7 +78,6 @@ if ($result->num_rows > 0) {
 } else {
     echo "<p class='info'>There are no orders.</p>";
 }
-
 $conn->close();
 ?>
 
@@ -66,6 +89,7 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smoky14 Admin</title>
     <link rel="stylesheet" href="orders.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <script>
         // JavaScript Event Handlers 
         function editOrder(order_id, customer_id, order_date, total_amount) {
@@ -125,6 +149,48 @@ $conn->close();
 </head>
 
 <body>
+    <header role="banner">
+        <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
+            <div class="container">
+                <img src="images/smoky14-high-resolution-logo-transparent.png" alt="SMOKY14" style="height: 130px; width: 400px;">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarsExample05">
+                    <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Recipes</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                <a class="dropdown-item" href="#">Food Catering</a>
+                                <a class="dropdown-item" href="#">Drink &amp; Beverages</a>
+                                <a class="dropdown-item" href="#">Wedding &amp; Birthday</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">News</a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item cta-btn">
+                            <a class="nav-link" href="#">Contact Us</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
     <h1>Smoky14 Admin</h1>
     <h2>Order List</h2>
     <?php if (!empty($orders)): ?>

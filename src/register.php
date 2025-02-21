@@ -1,31 +1,41 @@
 <?php
 include("database.php");
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+session_start();
+if (isset($_SESSION["username"])) {
+    header("Location: index.php");
+}
+
+if (isset($_POST['register'])) {
     $username = $_POST["username"];
     $email = $_POST["email"];
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT); // Hash password
+    $password = $_POST["password"];
 
-    $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sss", $username, $email, $password);
+    $role = 'user';
 
-    if ($stmt->execute()) {
-        echo "Registration successful! <a href='login.php'>Login</a>";
+    $sql = "SELECT * FROM users WHERE email = '$email'";
+    $result = mysqli_query($conn, $sql);
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errorMsg = "Email is not valid try again!";
+    } else if (strlen($password) < 6) {
+        $errorMsg = "password has to be more than 6 characters";
+    } else if ($execute = mysqli_num_rows($result) > 0) {
+        $errorMsg = "Email already exists";
     } else {
-        echo "Error: " . $conn->error;
+        $sql = "INSERT INTO users (username, email, password, role)
+        VALUES ('$username', '$email', '$password', '$role')";
+
+        $result = mysqli_query($conn, $sql);
+        if ($result == true) {
+            header("location: login.php");
+        } else {
+            $errorMsg = "Error: you are not registered";
+        }
     }
 }
 ?>
 
-<form method="POST">
-    Username: <input type="text" name="username" required><br>
-    Email: <input type="email" name="email" required><br>
-    Password: <input type="password" name="password" required><br>
-    <button type="submit">Register</button>
-</form>
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,27 +55,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h3>save your orders and track them with us</h3>
             <div class="form-group">
                 <i class="fa-solid fa-user"></i>
-                <input type="text" name="fullname" placeholder="Full Name" required>
+                <input type="text" name="username" placeholder="Full Name" required>
             </div>
             <div class="form-group">
-                <i class="fa-solid fa-envelope"></i>
-                <input type="email" name="email" placeholder="Email" required>
+                <i class="fa-solid fa-lock"></i>
+                <input type="email" name="email" placeholder="email" required>
             </div>
             <div class="form-group">
                 <i class="fa-solid fa-lock"></i>
                 <input type="password" name="password" placeholder="password" required>
             </div>
+
             <div class="form-group">
-                <i class="fa-solid fa-lock"></i>
-                <input type="password" name="repeatpassword" placeholder="repeat password" required>
+                <button type="submit" value="register" name="register">Register</button>
             </div>
-            <div class="form-group">
-                <i class="fa-solid fa-phone"></i>
-                <input type="tel" name="phone" placeholder="phone" required>
-            </div>
-            <div class="form-group">
-                <button type="submit" value="register" name="submit">Register</button>
-            </div>
+
             <div class="form-group">
                 <p>Already have an account? <a href="login.php">Login</a></p>
             </div>

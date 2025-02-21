@@ -118,8 +118,7 @@ List of the database tables that are part of our project:
 - Table 3 (Created By Firoz): Order_Items
 - Table 4 (Created By Sohaib): Customer_Review
 
-
- ![ER Diagram](images/er_diagram.png)
+ ![ER Diagram](src/images/er_diagram.png)
 
 ---
 
