@@ -113,10 +113,10 @@ Interactive JavaScript event handlers are implemented to improve user engagement
 
 List of the database tables that are part of our project: 
 
-- Table 1 (Created By Mustafa): Customers 
+- Table 1 (Created By Mustafa): users 
 - Table 2 (Created By Muntasir): Orders 
-- Table 3 (Created By Firoz): Order_Items
-- Table 4 (Created By Sohaib): Customer_Review
+- Table 3 (Created By Firoz): menu_items
+- Table 4 (Created By Sohaib): reviews
 
  ![ER Diagram](src/images/er_diagram.png)
 
