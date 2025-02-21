@@ -118,7 +118,8 @@ List of the database tables that are part of our project:
 - Table 3 (Created By Firoz): Order_Items
 - Table 4 (Created By Sohaib): Customer_Review
 
-> Include the ER Diagram of the database. 
+
+ ![ER Diagram](images/er_diagram.png)
 
 ---
 
@@ -144,3 +145,5 @@ List any tables that you have created in the project work
 - Table 4 (Created By Sohaib): Table Name | Link to the related code file (github) | Link to the table (shell.hamk.fi).
 
 ---
+
+
