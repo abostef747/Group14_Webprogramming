@@ -127,7 +127,14 @@ List of the database tables that are part of our project:
 List and describe any forms that have been created as part of your project. Include details about the purpose of each form and any validation logic.
 
 - Form 1 (Created By Mustafa): Form Name: Link to the related code file (github) | Link to the form (shell.hamk.fi). | Validations Applied
-- Form 2: (Created By Muntasir): Form Name: Link to the related code file (github) | Link to the form (shell.hamk.fi).  | Validations Applied
+
+- Form 2: (Created By Muntasir): Form Name: Orders (Order History) & Admin
+https://github.com/abostef747/Group14_Webprogramming/blob/main/src/orders.php 
+https://github.com/abostef747/Group14_Webprogramming/blob/main/src/admin.php
+| http://shell.hamk.fi/~amk1004807/group14/orders.php 
+http://shell.hamk.fi/~amk1004807/group14/admin.php
+| Validations Applied (Javascript)
+
 - Form 3: (Created By Firoz): Form Name: Link to the related code file (github) | Link to the form (shell.hamk.fi).  | Validations Applied
 - Form 4: (Created By Sohaib): Form Name: Link to the related code file (github) | Link to the form (shell.hamk.fi).  | Validations Applied
 
@@ -139,7 +146,11 @@ List and describe any forms that have been created as part of your project. Incl
 List any tables that you have created in the project work
 
 - Table 1 (Created By Mustafa): Table Name | Link to the related code file (github) | Link to the table (shell.hamk.fi).
-- Table 2 (Created By Muntasir): Table Name | Link to the related code file (github) | Link to the table (shell.hamk.fi).
+
+- Table 2 (Created By Muntasir): Table Name : Orders | 
+https://github.com/abostef747/Group14_Webprogramming/blob/main/src/orders.php  
+| http://shell.hamk.fi/~amk1004807/group14/orders.php 
+
 - Table 3 (Created By Firoz): Table Name | Link to the related code file (github) | Link to the table (shell.hamk.fi).
 - Table 4 (Created By Sohaib): Table Name | Link to the related code file (github) | Link to the table (shell.hamk.fi).
 
