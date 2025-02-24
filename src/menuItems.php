@@ -3,8 +3,9 @@ include("database.php");
 
 
 
-$sql = "SELECT * FROM menu_items";
-$result = $conn->query($sql);
+$sqlretrieve = "SELECT * FROM menu_items";
+$result = $conn->query($sqlretrieve);
+
 
 ?>
 
@@ -18,7 +19,7 @@ $result = $conn->query($sql);
     <link href="https://db.onlinewebfonts.com/c/565a681be0eb6f1d92c6bc57c629ea35?family=Flame+Bold" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/menuitems.css">
-
+    <link rel="stylesheet" href="css/navbar.css">
     <title>Document</title>
 </head>
 
@@ -42,8 +43,10 @@ $result = $conn->query($sql);
         } else {
             echo "No items found!";
         }
+
         ?>
     </div>
+
 </body>
 
 </html>

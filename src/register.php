@@ -7,12 +7,30 @@ if (isset($_SESSION["username"])) {
 }
 
 if (isset($_POST['register'])) {
+session_start();
+if (isset($_SESSION["username"])) {
+    header("Location: index.php");
+}
+
+if (isset($_POST['register'])) {
     $username = $_POST["username"];
     $email = $_POST["email"];
     $password = $_POST["password"];
 
     $role = 'user';
+    $password = $_POST["password"];
 
+    $role = 'user';
+
+    $sql = "SELECT * FROM users WHERE email = '$email'";
+    $result = mysqli_query($conn, $sql);
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errorMsg = "Email is not valid try again!";
+    } else if (strlen($password) < 6) {
+        $errorMsg = "password has to be more than 6 characters";
+    } else if ($execute = mysqli_num_rows($result) > 0) {
+        $errorMsg = "Email already exists";
     $sql = "SELECT * FROM users WHERE email = '$email'";
     $result = mysqli_query($conn, $sql);
 
@@ -57,8 +75,11 @@ if (isset($_POST['register'])) {
             <div class="form-group">
                 <i class="fa-solid fa-user"></i>
                 <input type="text" name="username" placeholder="Full Name" required>
+                <input type="text" name="username" placeholder="Full Name" required>
             </div>
             <div class="form-group">
+                <i class="fa-solid fa-lock"></i>
+                <input type="email" name="email" placeholder="email" required>
                 <i class="fa-solid fa-lock"></i>
                 <input type="email" name="email" placeholder="email" required>
             </div>
@@ -67,9 +88,12 @@ if (isset($_POST['register'])) {
                 <input type="password" name="password" placeholder="password" required>
             </div>
 
+
             <div class="form-group">
                 <button type="submit" value="register" name="register">Register</button>
+                <button type="submit" value="register" name="register">Register</button>
             </div>
+
 
             <div class="form-group">
                 <p>Already have an account? <a href="login.php">Login</a></p>

@@ -43,6 +43,30 @@ if (isset($_GET['delete'])) {
     }
 }
 
+$sql = "SELECT Orders.order_id AS order_id, users.username AS customer, menu_items.name AS item, menu_items.price, Orders.order_date FROM Orders JOIN users ON Orders.customer_id = users.customer_id JOIN menu_items ON Orders.menu_item_id = menu_items.menu_item_id ORDER BY Orders.order_date DESC;";
+
+
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    echo "<h2>Order History</h2>";
+    echo "<table border='1'><tr><th>Order ID</th><th>Customer</th><th>Item</th><th>Price</th><th>Date</th></tr>";
+
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>
+                <td>{$row['order_id']}</td>
+                <td>{$row['customer']}</td>
+                <td>{$row['item']}</td>
+                <td>\${$row['price']}</td>
+                <td>{$row['order_date']}</td>
+              </tr>";
+    }
+    echo "</table>";
+} else {
+    echo "No orders found.";
+}
+
+
 // Fetch all orders
 $sql = "SELECT * FROM Orders";
 $result = $conn->query($sql);
@@ -54,7 +78,6 @@ if ($result->num_rows > 0) {
 } else {
     echo "<p class='info'>There are no orders.</p>";
 }
-
 $conn->close();
 ?>
 
@@ -66,6 +89,7 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smoky14 Admin</title>
     <link rel="stylesheet" href="orders.css">
+
     <script>
         // JavaScript Event Handlers 
         function editOrder(order_id, customer_id, order_date, total_amount) {
@@ -125,6 +149,156 @@ $conn->close();
 </head>
 
 <body>
+    <header role="banner">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/smoky14-high-resolution-logo-transparent.png" alt="SMOKY14" style="height: 130px; width: 400px;">
+                </a>
+
+                <!-- Navbar Toggler for Mobile -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Recipes</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                <a class="dropdown-item" href="#">Food Catering</a>
+                                <a class="dropdown-item" href="#">Drink & Beverages</a>
+                                <a class="dropdown-item" href="#">Wedding & Birthday</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link cta-btn" href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <style>
+            /* Navbar Styling */
+            .navbar {
+                background-color: #ffffff;
+                /* White background */
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                /* Subtle shadow */
+                padding: 10px 20px;
+                font-family: 'Arial', sans-serif;
+            }
+
+            .navbar-brand img {
+                height: 100px;
+                /* Adjust logo size */
+                width: auto;
+                /* Maintain aspect ratio */
+            }
+
+            .navbar-nav {
+                margin-left: auto;
+                /* Align links to the right */
+                display: flex;
+                align-items: center;
+            }
+
+            .nav-item {
+                margin: 0 15px;
+                /* Space between items */
+            }
+
+            .nav-link {
+                color: #333333 !important;
+                /* Dark text */
+                font-size: 16px;
+                padding: 8px 12px;
+                transition: color 0.3s ease;
+            }
+
+            .nav-link:hover {
+                color: #007bff !important;
+                /* Blue hover effect */
+            }
+
+            .nav-link.active {
+                font-weight: bold;
+                color: #007bff !important;
+                /* Blue for active link */
+            }
+
+            .cta-btn {
+                background-color: #007bff;
+                /* Blue background for CTA button */
+                color: #ffffff !important;
+                /* White text */
+                border-radius: 4px;
+                padding: 8px 16px;
+                transition: background-color 0.3s ease;
+            }
+
+            .cta-btn:hover {
+                background-color: #0056b3;
+                /* Darker blue on hover */
+            }
+
+            /* Dropdown Menu Styling */
+            .dropdown-menu {
+                background-color: #ffffff;
+                border: none;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .dropdown-item {
+                color: #333333;
+                padding: 8px 16px;
+                transition: background-color 0.3s ease;
+            }
+
+            .dropdown-item:hover {
+                background-color: #f8f9fa;
+                /* Light gray on hover */
+                color: #007bff;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .navbar-brand img {
+                    height: 80px;
+                    /* Smaller logo for mobile */
+                }
+
+                .navbar-nav {
+                    margin-top: 10px;
+                }
+
+                .nav-item {
+                    margin: 10px 0;
+                    /* Stack items vertically */
+                }
+
+                .cta-btn {
+                    width: 100%;
+                    /* Full-width button on mobile */
+                    text-align: center;
+                }
+            }
+        </style>
+    </header>
     <h1>Smoky14 Admin</h1>
     <h2>Order List</h2>
     <?php if (!empty($orders)): ?>
