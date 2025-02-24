@@ -3,14 +3,14 @@ include("database.php");
 ?>
 
 <body>
-    <div class="scroll-container">
-        <?php
-        $sql = "SELECT image, name, description FROM users";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo "<div class='card'>
+    <section class="reviews">
+        <div class="scroll-container">
+            <?php
+            $sql = "SELECT image, name, description FROM users";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<div class='card'>
                         <div class='profile'>
                             <img src='" . $row["image"] . "' alt='" . $row["name"] . "' class='profile-img'>
                             <div class='info'>
@@ -28,12 +28,12 @@ include("database.php");
                             <p><i class='fa-solid fa-quote-left'></i><br>" . $row["description"] . "<br><i class='fa-solid fa-quote-right'></i></p>
                         </div>
                     </div>";
+                }
+            } else {
+                echo "No users found.";
             }
-        } else {
-            echo "No users found.";
-        }
-
-        $conn->close();
-        ?>
-    </div>
+            $conn->close();
+            ?>
+        </div>
+    </section>
 </body>

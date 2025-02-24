@@ -1,8 +1,8 @@
 <?php
-$db_server = "group14_webprogramming-db-1";
+$db_server = "webprogramming-db-1";
 $db_user = "root";
 $db_pass = "password";
-$db_name = "wp_db";
+$db_name = "group14";
 
 // Attempt to connect to the database
 try {

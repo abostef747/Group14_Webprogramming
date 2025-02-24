@@ -6,6 +6,15 @@ services:
       dockerfile: Dockerfile
     ports:
       - 81:80
+    develop:
+      watch:
+        - action: sync
+          path: ./web
+          target: .
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: index.php
     volumes:
       - ./src:/var/www/html/
     restart: always

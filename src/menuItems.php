@@ -29,9 +29,7 @@ $result = $conn->query($sql);
         include("navbar.php");
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo "
-                
-                <div class='card'>
+                echo "<div class='card'>
             <img src='images/" . $row['image'] . "' alt='Burger 1'>
             <h3>" . $row['name'] . "</h3>
             <p>" . $row['description'] . "</p>
