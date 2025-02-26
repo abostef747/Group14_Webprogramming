@@ -7,7 +7,8 @@ if (isset($_SESSION["username"])) {
 }
 
 if (isset($_POST['register'])) {
-session_start();
+    session_start();
+}
 if (isset($_SESSION["username"])) {
     header("Location: index.php");
 }
@@ -31,9 +32,9 @@ if (isset($_POST['register'])) {
         $errorMsg = "password has to be more than 6 characters";
     } else if ($execute = mysqli_num_rows($result) > 0) {
         $errorMsg = "Email already exists";
-    $sql = "SELECT * FROM users WHERE email = '$email'";
-    $result = mysqli_query($conn, $sql);
-
+        $sql = "SELECT * FROM users WHERE email = '$email'";
+        $result = mysqli_query($conn, $sql);
+    }
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errorMsg = "Email is not valid try again!";
     } else if (strlen($password) < 6) {
